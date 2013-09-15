@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>lovebomb</title>
+  <meta name="description" content="lovebomb - send a lovebomb, save the internet">
+  <meta name="author" content="marthakelly">
+  <!--link rel="stylesheet" href="css/styles.css?v=1.0"-->
+  <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  {{#each statuses}}
+    <p>{{text}}</p>
+    <p>{{user.screen_name}}</p>
+  {{/each}}
+</body>
+</html>
