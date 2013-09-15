@@ -1,0 +1,29 @@
+{
+  "name": "lovebomb",
+  "version": "0.0.0",
+  "description": "send a lovebomb, save the internet",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marthakelly/lovebomb.git"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "marthakelly",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/marthakelly/lovebomb/issues"
+  },
+  "dependencies": {
+    "express": "~3.4.0"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.3.x"
+  }
+}
