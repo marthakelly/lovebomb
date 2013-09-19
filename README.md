@@ -7,8 +7,12 @@ Lovebomb is a simple web app built with the express framework for node.js. It ag
 
 ## How do I send a lovebomb?
 Send a nice tweet that mentions a twitter user (ex: @seriouspony) with the hashtag #lovebomb 
+
 ex: "@adambrault thank you for your closing keynote at #jsconfeu. Now I believe this industry can 1) change itself 2) change the world #lovebomb" 
+
 ex: "@garanm you supported me through a really hard time. If it weren't for you I would have given up. You're really amazing <3 #lovebomb" 
+
+ex: "@seriouspony I want you to know how much it means to me that you're back. I hope now we can change things, together #lovebomb" 
 
 ## Where do I find lovebombs?
 [lovebomb.io](http://www.lovebomb.io)
