@@ -8,7 +8,7 @@ var express = require('express'),
   config = require('./config.json');
 
 // testing
-var fixture = require('./fixture.json');
+// var fixture = require('./fixture.json');
 
 var app = express();
 
@@ -62,17 +62,16 @@ app.get('/:username', function (req, res) {
 
   twitter.get('search/tweets', params, function(err, tweets) {
     // testing
-    fixture = processLinks(fixture);
-    res.render('user', fixture);
+    // fixture = processLinks(fixture);
+    // res.render('user', fixture);
+
     // production
-    /*
     if (err) {
       res.send('404 Not found', 404);
     } else {
       tweets = processLinks(tweets);
       res.render('user', tweets);
     }
-    */
   });
   /*
    * Upcoming:
