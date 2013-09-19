@@ -29,7 +29,7 @@ This app might not be much (and doesn't prevent exploitation) but it doesn't hav
 
 Together we *can* drown out the darkness with the light. You have unrestricted access to ~554,750,000 *human beings* on Twitter, use it for good.
 
-Thanks to Adam for inspiring me so deeply, and to Angelina Fabbro for the name!
+Thanks to Adam for inspiring me so deeply, and to Angelina Fabbro for the name
 
 Reccomended Viewing:
 [Adam Brault's "People First" keynote"](https://speakerdeck.com/adambrault/people-first-with-notes)
