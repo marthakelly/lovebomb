@@ -23,7 +23,7 @@ ex: "@seriouspony I want you to know how much it means to me that you're back. I
 
 ## Why did you build this?
 
-The way you treat people is more important than the code you write, the opinions you have, or the job title you hold. I mean seriously, have you given much thought to *life* beyond getting recongition for the inconsequential details of software*? It's as simple as that. As it stands now, people are being turned away from the technology community because of hostility, shame, or fear. This is unacceptable. As a result, I don't fit the "traditional" MO (modus operandi) of a programmer and, honestly, the least interesting people in my life do. I'd like to change that.
+The way you treat people is more important than the code you write, the opinions you have, or the job title you hold. I mean seriously, have you given much thought to *life* beyond getting recognition for the inconsequential details of software*? It's as simple as that. As it stands now, people are being turned away from the technology community because of hostility, shame, or fear. This is unacceptable. As a result, I don't fit the "traditional" MO (modus operandi) of a programmer and, honestly, the least interesting people in my life do. I'd like to change that.
 
 This app might not be much (and doesn't prevent exploitation) but it doesn't have to be. As Adam Brault said in his "People First" JSConfEu keynote, "there are no premature optimizations recommended."
 
