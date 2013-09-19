@@ -1,5 +1,3 @@
-// TODO: fix links in tweet text
-
 // dependency list
 var express = require('express'),
   twit = require('twit'),
@@ -8,26 +6,23 @@ var express = require('express'),
 
 var app = express();
 
-/*
-// this is shit I KNOW
-if (process.env.DEVELOPMENT) {
+if (process.env.NODE_ENV === "development") {
   var config = require('./config.json');
 
-  process.env['CONSUMER_KEY'] = config.CONSUMER_KEY;
-  process.env['CONSUMER_SECRET'] = config.CONSUMER_SECRET;
-  process.env['ACCESS_TOKEN'] = config.ACCESS_TOKEN;
+  process.env['CONSUMER_KEY']        = config.CONSUMER_KEY;
+  process.env['CONSUMER_SECRET']     = config.CONSUMER_SECRET;
+  process.env['ACCESS_TOKEN']        = config.ACCESS_TOKEN;
   process.env['ACCESS_TOKEN_SECRET'] = config.ACCESS_TOKEN_SECRET;
 }
-*/
 
 // testing
 // var fixture = require('./fixture.json');
 
 var twitter = new twit({
-  consumer_key:        CONSUMER_KEY,
-  consumer_secret:     CONSUMER_SECRET,
-  access_token:        ACCESS_TOKEN,
-  access_token_secret: ACCESS_TOKEN_SECRET
+  consumer_key:        process.env.CONSUMER_KEY,
+  consumer_secret:     process.env.CONSUMER_SECRET,
+  access_token:        process.env.ACCESS_TOKEN,
+  access_token_secret: process.env.ACCESS_TOKEN_SECRET
 });
 
 var formatURL = function(text) {
