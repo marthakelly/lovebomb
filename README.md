@@ -11,10 +11,10 @@ ex: "@adambrault thank you for your closing keynote at #jsconfeu. Now I believe 
 ex: "@garanm you supported me through a really hard time. If it weren't for you I would have given up. You're really amazing <3 #lovebomb"
 
 ## Where do I find lovebombs?
-lovebomb.marthakelly.com
+[lovebomb.io](http://www.lovebomb.io)
 * aggregates all lovebombs
 
-lovebomb.marthakelly.com/:twitter-name
+[lovebomb.io](http://www.lovebomb.io/:twitter-name)
 * aggregates all lovebombs sent to a specific user
 
 ## Why did you build this?
