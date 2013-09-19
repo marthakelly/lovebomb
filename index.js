@@ -21,7 +21,7 @@ var twitter = new twit({
 
 var formatURL = function(text) {
   var exp = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
-  return text.replace(exp, '<a href="$1" target="_blank">$1</a>');
+  return text.replace(exp, '<a href="$1" class="link" target="_blank">$1</a>');
 };
 
 var processLinks = function(tweets) {
@@ -39,7 +39,18 @@ app.use(express.logger());
 
 // show all lovebombs
 app.get('/', function (req, res) {
-  res.render('index');
+  var params = {
+    q: '%20%23lovebomb+exclude:retweets',
+    count: 26
+  };
+  twitter.get('search/tweets', params, function(err, tweets) {
+    if (err) {
+      res.send('404 Not found', 404);
+    } else {
+      tweets = processLinks(tweets);
+      res.render('index', tweets);
+    }
+  });
 });
 
 // show lovebombs for particular twitter user
