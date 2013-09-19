@@ -6,6 +6,8 @@ var express = require('express'),
 
 var app = express();
 
+app.use(express.favicon("favicon.ico")); 
+
 if (process.env.NODE_ENV === "development") {
   var config = require('./config.json');
 
