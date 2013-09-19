@@ -4,19 +4,30 @@
 var express = require('express'),
   twit = require('twit'),
   handlebars = require('handlebars'),
-  consolidate = require('consolidate'),
-  config = require('./config.json');
+  consolidate = require('consolidate');
+
+var app = express();
+
+/*
+// this is shit I KNOW
+if (process.env.DEVELOPMENT) {
+  var config = require('./config.json');
+
+  process.env['CONSUMER_KEY'] = config.CONSUMER_KEY;
+  process.env['CONSUMER_SECRET'] = config.CONSUMER_SECRET;
+  process.env['ACCESS_TOKEN'] = config.ACCESS_TOKEN;
+  process.env['ACCESS_TOKEN_SECRET'] = config.ACCESS_TOKEN_SECRET;
+}
+*/
 
 // testing
 // var fixture = require('./fixture.json');
 
-var app = express();
-
 var twitter = new twit({
-  consumer_key:        config.CONSUMER_KEY,
-  consumer_secret:     config.CONSUMER_SECRET,
-  access_token:        config.ACCESS_TOKEN,
-  access_token_secret: config.ACCESS_TOKEN_SECRET
+  consumer_key:        CONSUMER_KEY,
+  consumer_secret:     CONSUMER_SECRET,
+  access_token:        ACCESS_TOKEN,
+  access_token_secret: ACCESS_TOKEN_SECRET
 });
 
 var formatURL = function(text) {
