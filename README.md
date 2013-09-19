@@ -1,6 +1,16 @@
 lovebomb
 ========
+"Send a lovebomb, save the internet"
 
-*Drown out the darkness with the light*
+# What is lovebomb?
+Lovebomb is a simple web app built with the express framework for node.js. It aggregates tweets with the hashtag #lovebomb.
 
-Lovebomb aggregates #lovebomb tweets sent to a twitter user.
+# How do I send lovebombs?
+just send a tweet that mentions a twitter user (ex: @seriouspony) with the hashtag #lovebomb
+
+# Where do I find lovebombs?
+lovebomb.marthakelly.com
+- aggregates all lovebombs
+
+lovebomb.marthakelly.com/:twitter-name
+- aggregates all lovebombs sent to a specific user

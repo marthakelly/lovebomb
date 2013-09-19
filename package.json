@@ -20,7 +20,9 @@
     "url": "https://github.com/marthakelly/lovebomb/issues"
   },
   "dependencies": {
-    "express": "~3.4.0"
+    "express": "~3.4.0",
+    "consolidate": "0.4.0",
+    "handlebars": "1.0.7"
   },
   "engines": {
     "node": "0.8.x",

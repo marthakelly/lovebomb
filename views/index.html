@@ -1,1 +1,41 @@
-hai
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>lovebomb</title>
+  <meta name="description" content="lovebomb - send a lovebomb, save the internet">
+  <meta name="author" content="marthakelly">
+  <style>
+    body {margin: 0; padding: 0; background-color: #CCC;}
+    .header {background-color: #FF6B6B; color: #CA3637; border-top: 5px solid #F75154; overflow: hidden; width: 100%;}
+    .lovebomb {width: 20%; padding: 0 2.5%; height: 300px; float: left;}
+    .text {text-align: center; font-family: "Georgia", serif; letter-spacing: 0.05em; line-height: 1.25em; font-size: 1.5em; margin: 0;}
+    .small {font-size: 1em; margin: 0.5em 0;}
+    .link {color: #4ECDC4; text-decoration: none;}
+    .error {display: none;}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <p class="text small">&hearts; &hearts; lovebomb &hearts; &hearts;</p>
+  </header>
+  <form onsubmit="viewLoveBombs(); return false">
+    <label>View lovebombs:</label>
+    <input class="username" placeholder="twitter username" />
+    <input type="submit" value="Submit">
+  </form>
+  <div class="error">
+    <p>Please enter a Twitter username</p>
+  </div>
+  <script>
+  function viewLoveBombs() {
+    var username = document.getElementsByClassName("username")[0].value;
+    if (username === "") {
+      document.getElementsByClassName("error")[0].style.display = "block"; 
+    } else {
+      window.open("/" + username);
+    }
+  }
+  </script>
+</body>
+</html>

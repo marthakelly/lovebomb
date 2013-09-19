@@ -4,16 +4,73 @@
   <meta charset="utf-8">
   <title>lovebomb</title>
   <meta name="description" content="lovebomb - send a lovebomb, save the internet">
-  <meta name="author" content="marthakelly">
-  <!--link rel="stylesheet" href="css/styles.css?v=1.0"-->
-  <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+  <meta name="author" content="@marthakelly">
+  <!-- inlining css to reduce requests -->
+  <!-- IT'S MY CODE I DO WHAT I WANT -->
+  <style>
+    body {margin: 0; padding: 0; background-color: #CCC;}
+    .header {background-color: #FF6B6B; color: #CA3637; border-top: 5px solid #F75154; overflow: hidden; width: 100%;}
+    .lovebomb {width: 20%; padding: 0 2.5%; height: 300px; float: left;}
+    .text {text-align: center; font-family: "Georgia", serif; letter-spacing: 0.05em; line-height: 1.25em; font-size: 1.5em; margin: 0;}
+    .small {font-size: 1em; margin: 0.5em 0;}
+    .link {color: #4ECDC4; text-decoration: none;}
+    .logo {font-family:"Arial", sans-serif; font-weight: bold; letter-spacing: 0.2em; text-transform: uppercase;}
+    .colorScheme1 {background-color: #4ECDC4; color: #556270;}
+    .colorScheme1 a {color: #E4F2EF;}
+    .colorScheme2 {background-color: #FF9C9C; color: #C44D58;}
+    .colorScheme2 a {color: #0B8C8F;}
+    .colorScheme3 {background-color: #556270; color: #E4F2EF;}
+    .colorScheme4 {background-color: #0B8C8F; color: #2B2825;}
+    .colorScheme5 {background-color: #E4F2EF; color: #555;}
+    @media only screen and (max-width: 900px) {
+      .lovebomb {width: 45%;}
+    }
+    @media only screen and (max-width: 767px) {
+      .lovebomb {width: 100%;}
+    }
+  </style>
 </head>
 <body>
+  <div class="header">
+    <p class="text small logo">&hearts; &hearts; &hearts; lovebomb &hearts; &hearts; &hearts;</p>
+  </div>
+  <div class="lovebombs">
   {{#each statuses}}
-    <p>{{text}}</p>
-    <p>{{user.screen_name}}</p>
+    <div class="lovebomb">
+      <div class="content">
+        <p class="text">{{text}}</p>
+        <p class="text small"><a href="http://www.twitter.com/{{user.screen_name}}" class="link">@{{user.screen_name}}</a></p>
+        <p class="text small">&hearts;</p>
+      </div>
+    </div>
   {{/each}}
+  </div>
+  <!-- vanilla JS -->
+  <!-- inlining JS to reduce requests -->
+  <!-- IT'S MY CODE I DO WHAT I WANT -->
+  <script>
+    (function visuallyFormat() {
+      var elements = document.getElementsByClassName("lovebomb"),
+          current,
+          content,
+          elementHeight,
+          contentHeight,
+          topOffset;
+
+      for (var i = 0; i < elements.length; i++) {
+        element = elements[i],
+        content = elements[i].getElementsByClassName("content")[0],
+        elementHeight = element.offsetHeight,
+        contentHeight = content.offsetHeight;
+
+        // vertically center text inside element
+        topOffset = (elementHeight - contentHeight) / 2;
+        content.style.marginTop = topOffset + "px";
+
+        // "randomly" assign class names (for variation)
+        element.className = element.className + " " + "colorScheme" + (Math.floor(Math.random() * 5) + 1);
+      }
+    })();
+  </script>
 </body>
 </html>
