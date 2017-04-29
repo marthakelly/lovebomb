@@ -1,12 +1,13 @@
 // dependency list
-var express = require('express'),
-  twit = require('twit'),
-  handlebars = require('handlebars'),
-  consolidate = require('consolidate');
+var express = require('express');
+
+var twit = require('twit');
+var handlebars = require('handlebars');
+var consolidate = require('consolidate');
 
 var app = express();
 
-app.use(express.favicon("favicon.ico")); 
+app.use(express.favicon("favicon.ico"));
 
 if (process.env.NODE_ENV === "development") {
   var config = require('./config.json');
@@ -27,12 +28,12 @@ var twitter = new twit({
   access_token_secret: process.env.ACCESS_TOKEN_SECRET
 });
 
-var formatURL = function(text) {
+var formatURL = text => {
   var exp = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim;
   return text.replace(exp, '<a href="$1" class="link" target="_blank">$1</a>');
 };
 
-var processLinks = function(tweets) {
+var processLinks = tweets => {
   for (var i = 0; i < tweets.statuses.length; i++) {
     tweets.statuses[i].text = formatURL(tweets.statuses[i].text);
   }
@@ -46,12 +47,12 @@ app.set('views', __dirname + '/views');
 app.use(express.logger());
 
 // show all lovebombs
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
   var params = {
     q: '%20%23lovebomb+exclude:retweets',
     count: 26
   };
-  twitter.get('search/tweets', params, function(err, tweets) {
+  twitter.get('search/tweets', params, (err, tweets) => {
     if (err) {
       res.send('404 Not found', 404);
     } else {
@@ -62,13 +63,13 @@ app.get('/', function (req, res) {
 });
 
 // show lovebombs for particular twitter user
-app.get('/:username', function (req, res) {
+app.get('/:username', (req, res) => {
   var params = {
     q: req.params.username + '%20%23lovebomb+exclude:retweets',
     count: 100
   };
 
-  twitter.get('search/tweets', params, function(err, tweets) {
+  twitter.get('search/tweets', params, (err, tweets) => {
     // testing
     // fixture = processLinks(fixture);
     // res.render('user', fixture);
@@ -95,6 +96,6 @@ app.get('/:username', function (req, res) {
   */
 });
 
-app.listen(app.get('port'), function(){
+app.listen(app.get('port'), () => {
   console.log('Express server listening on port ' + app.get('port'));
 });
